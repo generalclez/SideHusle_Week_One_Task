@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Assignmenet</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+ul{
+    list-style: none;
+    margin: 20px;
+}
+ form li + li{
+    margin-top: 10px;
+}
+label{
+    display: inline-block;
+    width: 90px;
+}
+.btn{
+    padding: 5px 30px;
+    color: green;
+}
+.popup{
+    width: 200px;
+    background:gray;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: green;
+    visibility: hidden;
+}
+.open-popup{
+    visibility: visible;
+    transform:  translate(-50%,-50%);
+}
+    </style>
+</head>
+<body>
+        <h2>BIO-DATA</h2>
+        <P>Kindly fill in the your details correctly, make sure you cross check before summiting.</P>
+        <!--name-->
+        <form onsubmit="alert (Submit Successfully!)" style="border-radius: ;">
+            <ul>
+            <li>
+                <label for="firstname">First name:</label>
+                <input type="name" name="firstname" id="firstname" placeholder="First name" required>
+             </li>    
+        </ul>
+        <ul>
+            <li>
+                <label for="lastname">Last name:</label>
+                <input type="name" name="lastname" id="lastname" placeholder="Last name" required>
+             </li>    
+        </ul>
+
+        <!--email-->
+        <ul>
+            <li>
+                <label for="email">Email address:</label>
+                <input type="email" name="email" id="email" placeholder="Your email" required>
+            </li>
+        </ul>
+        <!--phone-->
+        <ul>
+            <li>
+                <label for="phone">Phone number:</label>
+                <input type="tel" name="phone" id="phone" placeholder="Your phone number" required>
+             </li>
+        </ul>
+        <!--gender-->
+        <ul>
+            <li>
+                <label for="">Gender:</label>
+                <select name="Gender" id="Gender">
+                <option value="gender"></option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                </select>
+            </li>
+        </ul>
+        <!--password-->
+        <ul>
+            <li>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" placeholder="*****">
+            </li>
+        </ul>
+        <br>
+        <!--summit button-->
+        <div class="container">
+            <button type="summit" class="btn" onclick="openPopup()">SUBMIT</button>
+            <div class="popup" id="popup">
+                <p>Submitted successfully!</p>
+                <button type="button" onclick="closePopup()">OK</button>
+            </div>
+        </div>
+    </form>
+    <script>
+        let popup = document.getElementById("popup");
+        function openPopup(){
+            popup.classList.add("open-popup");
+        }
+        function closePopup(){
+            popup.classList.remove("open-popup");
+        }
+
+    </script>
+</body>
+</html>
